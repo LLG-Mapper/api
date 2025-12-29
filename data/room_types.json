@@ -1,0 +1,50 @@
+[
+    {
+        "code": "CLASS",
+        "name": "Classroom"
+    },
+    {
+        "code": "LAB",
+        "name": "Laboratory"
+    },
+    {
+        "code": "AMPHI",
+        "name": "Amphitheater"
+    },
+    {
+        "code": "BREAK",
+        "name": "Break room"
+    },
+    {
+        "code": "SPORT",
+        "name": "Gymnasium"
+    },
+    {
+        "code": "TECH",
+        "name": "Technical room"
+    },
+    {
+        "code": "CLOSET",
+        "name": "Closet"
+    },
+    {
+        "code": "TOILET",
+        "name": "Restroom"
+    },
+    {
+        "code": "TEACH",
+        "name": "Teacher's room"
+    },
+    {
+        "code": "OFFICE",
+        "name": "Office"
+    },
+    {
+        "code": "DORM",
+        "name": "Dormitory"
+    },
+    {
+        "code": "OTHER",
+        "name": "Other"
+    }
+]

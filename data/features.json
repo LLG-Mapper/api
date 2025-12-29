@@ -1,0 +1,18 @@
+[
+    {
+        "code": "PROJ",
+        "name": "Projector"
+    },
+    {
+        "code": "WBOARD",
+        "name": "Whiteboard"
+    },
+    {
+        "code": "BBOARD",
+        "name": "Blackboard"
+    },
+    {
+        "code": "PC",
+        "name": "Computer"
+    }
+]

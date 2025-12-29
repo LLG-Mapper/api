@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Molière",
+        "code": "M",
+        "floor": 0,
+        "rooms": [
+            {
+                "number": 1,
+                "floor": 0,
+                "is_open": true,
+                "capacity": 30,
+                "features": [
+                    "PROJ",
+                    "WBOARD"
+                ],
+                "location": [20, 100],
+                "size": [50, 30]
+            }
+        ]
+    },
+    {
+        "name": "Cour d'Honneur",
+        "code": "CH",
+        "floor": 1
+    },
+    {
+        "name": "Victor Hugo",
+        "code": "VH",
+        "floor": 1,
+        "rooms": [
+            {
+                "number": 46,
+                "floor": 0,
+                "is_open": true,
+                "capacity": 40,
+                "features": [
+                    "PROJ",
+                    "WBOARD",
+                    "BBOARD",
+                    "PC"
+                ],
+                "location": [20, 100],
+                "size": [50, 30]
+            }
+        ]
+    }
+]
