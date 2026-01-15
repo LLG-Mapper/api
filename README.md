@@ -6,8 +6,6 @@ The complete REST API is documented below. All endpoints return JSON responses a
 
 ---
 
-**Base URL:** `http://localhost:5000`
-
 **Health Check:**
 ```bash
 GET /health → {"status": "ok"}
@@ -17,6 +15,53 @@ GET /health → {"status": "ok"}
 - `/buildings` - Building management
 - `/rooms` - Room availability and filtering
 - `/classes` - Class scheduling
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+
+### Installation & Setup
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/LLG-Mapper/api.git
+cd api
+```
+
+*Or clone using GitHub Desktop*
+
+#### 2. First-Time Setup
+**Windows**
+```bash
+# From api/ directory
+scripts\setup
+```
+
+**macOS/Linux**
+```bash
+# From api/ directory
+./scripts/setup.sh # macOS/Linux
+```
+
+#### 3. Start the API Server
+**Windows**
+```bash
+# From api/ directory
+scripts\start
+```
+
+**macOS/Linux**
+```bash
+# From api/ directory
+./scripts/start.sh # macOS/Linux
+```
+
+The API will be available at `http://localhost:5000` (development mode).
 
 ---
 
