@@ -392,7 +392,10 @@ Scheduled class session.
   - [`GET /classes/{id}`](#get-class-by-id) - Get class by ID
   - [`POST /classes`](#create-class) - Create class
   - [`PUT /classes/{id}`](#update-class) - Update class
-  - [`DELETE /classes/{id}`](#delete-class) - Delete class
+  - [`DELETE /classes/{id}`](#delete-class) - Delete 
+  
+- Features
+  - `GET /features` - List features
 
 **Planned Endpoints (Coming Soon):**
 - Room Types
@@ -400,7 +403,6 @@ Scheduled class session.
   - `POST /room-types` - Create room type
 
 - Features
-  - `GET /features` - List features
   - `POST /features` - Create feature
 
 - Teachers
