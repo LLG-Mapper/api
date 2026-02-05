@@ -20,10 +20,7 @@ class RoomSchema(Schema):
     is_open = fields.Bool(load_default=True)
     type = fields.Nested(RoomTypeSchema, dump_only=True)
     type_id = fields.Int(load_only=True, required=True)
-    locationX = fields.Int(required=True)
-    locationY = fields.Int(required=True)
-    sizeX = fields.Int(required=True)
-    sizeY = fields.Int(required=True)
+    path = fields.Str(required=True)
     features = fields.Nested(FeatureSchema, many=True, dump_only=True)
     display_name = fields.Str(dump_only=True)
 

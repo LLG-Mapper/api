@@ -525,8 +525,7 @@ GET /rooms?building_id=1&floor=2&feature_codes=PROJ,WBOARD&is_available=true&ava
     "capacity": 40,
     "is_open": true,
     "type": {...},
-    "location": [130, 47],
-    "size": [60, 40],
+    "path": "...",
     "features": [...]
   }
 ]
@@ -558,10 +557,7 @@ Content-Type: application/json
   "capacity": 40,
   "is_open": true,
   "type_id": 1,
-  "locationX": 130,
-  "locationY": 47,
-  "sizeX": 60,
-  "sizeY": 40,
+  "path": "",
   "feature_ids": [1, 2]
 }
 ```
@@ -707,12 +703,9 @@ Content-Type: application/json
 
 ### Location & Size
 
-Room coordinates are returned as arrays:
-```json
-{
-  "location": [130, 47],  // [X, Y]
-  "size": [60, 40]        // [width, height]
-}
+Room coordinates are defined using svg coordonates:
+```svg
+M 10 10 L 60 10 L 60 40 L 10 40 Z
 ```
 
 ---

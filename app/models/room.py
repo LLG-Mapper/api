@@ -20,10 +20,7 @@ class Room(db.Model):
     capacity = db.Column(db.Integer)
     is_open = db.Column(db.Boolean, default=True)
     type_id = db.Column(db.Integer, db.ForeignKey("room_types.id"), nullable=False, default=0)
-    locationX = db.Column(db.Integer, nullable=False)
-    locationY = db.Column(db.Integer, nullable=False)
-    sizeX = db.Column(db.Integer, nullable=False)
-    sizeY = db.Column(db.Integer, nullable=False)
+    path = db.Column(db.String(255), nullable=False)
     
     building = db.relationship("Building", back_populates="rooms")
     type = db.relationship("RoomType", back_populates="rooms")

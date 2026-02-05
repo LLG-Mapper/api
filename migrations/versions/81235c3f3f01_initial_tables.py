@@ -1,8 +1,8 @@
 """Initial tables
 
-Revision ID: 5d3e5ad81749
+Revision ID: 81235c3f3f01
 Revises: 
-Create Date: 2025-12-27 11:29:30.131403
+Create Date: 2026-02-05 09:45:25.973377
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '5d3e5ad81749'
+revision = '81235c3f3f01'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -67,10 +67,7 @@ def upgrade():
     sa.Column('capacity', sa.Integer(), nullable=True),
     sa.Column('is_open', sa.Boolean(), nullable=True),
     sa.Column('type_id', sa.Integer(), nullable=False),
-    sa.Column('locationX', sa.Integer(), nullable=False),
-    sa.Column('locationY', sa.Integer(), nullable=False),
-    sa.Column('sizeX', sa.Integer(), nullable=False),
-    sa.Column('sizeY', sa.Integer(), nullable=False),
+    sa.Column('path', sa.String(length=255), nullable=False),
     sa.ForeignKeyConstraint(['building_id'], ['buildings.id'], ),
     sa.ForeignKeyConstraint(['type_id'], ['room_types.id'], ),
     sa.PrimaryKeyConstraint('id'),
@@ -95,7 +92,7 @@ def upgrade():
     sa.Column('end_date', sa.Date(), nullable=True),
     sa.Column('start_time', sa.Time(), nullable=False),
     sa.Column('end_time', sa.Time(), nullable=False),
-    sa.Column('recurrence', sa.Enum('ONCE', 'WEEKLY', 'WEEK_A', 'WEEK_B', name='class_frequency'), nullable=False),
+    sa.Column('recurrence', sa.Enum('ONCE', 'WEEKLY', 'WEEK_A', 'WEEK_B', name='frequency'), nullable=True),
     sa.Column('weekday', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['group_id'], ['groups.id'], ),
     sa.ForeignKeyConstraint(['room_id'], ['rooms.id'], ),

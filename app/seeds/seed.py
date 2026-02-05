@@ -67,10 +67,7 @@ with app.app_context():
                     building=building,
                     type=room_type,
                     is_open=r.get("is_open", True),
-                    locationX=r.get("location", [0, 0])[0],
-                    locationY=r.get("location", [0, 0])[1],
-                    sizeX=r.get("size", [10, 10])[0],
-                    sizeY=r.get("size", [10, 10])[1]
+                    path=r.get("path", "")
                 )
                 db.session.add(room)
                 db.session.commit()
