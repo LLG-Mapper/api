@@ -1,7 +1,7 @@
 [
     {
-        "name": "W",
-        "code": "W",
+        "name": "Molière",
+        "code": "M",
         "floor": 0,
         "rooms": [
             {
@@ -357,8 +357,8 @@
         ]
     },
     {
-        "name": "N",
-        "code": "N",
+        "name": "CH",
+        "code": "CH",
         "floor": 0,
         "rooms": [
             {
@@ -609,8 +609,8 @@
         ]
     },
     {
-        "name": "E",
-        "code": "E",
+        "name": "Victor Hugo",
+        "code": "VH",
         "floor": 0,
         "rooms": [
             {

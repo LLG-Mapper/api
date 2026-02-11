@@ -53,7 +53,6 @@ def list_rooms():
         )
 
     rooms = query.distinct().all()
-
     # Python-level availability logic
     result = []
     for room in rooms:

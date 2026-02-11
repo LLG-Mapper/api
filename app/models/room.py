@@ -7,6 +7,7 @@ class Room(db.Model):
     __table_args__ = (
         db.UniqueConstraint(
             "building_id",
+            "floor",
             "number",
             name="uq_room_number_per_building"
         ),

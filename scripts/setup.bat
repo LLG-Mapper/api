@@ -7,6 +7,6 @@ pip install -r requirements.txt
 echo "Virtual environment activated."
 .\scripts\dbCreate.bat
 echo "Database created."
-python -m app.seeds.seed.py
+python -m app.seeds.seed
 echo "Database seeded."
 echo "Setup complete."
