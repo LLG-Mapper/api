@@ -198,10 +198,7 @@ Physical classroom or space.
 | capacity | Integer | Optional |
 | is_open | Boolean | Default: true |
 | type_id | Integer | Foreign Key → RoomType |
-| locationX | Integer | Required (map coordinate) |
-| locationY | Integer | Required (map coordinate) |
-| sizeX | Integer | Required (map dimension) |
-| sizeY | Integer | Required (map dimension) |
+| path | String(255) | Required (map coordinate) |
 
 **Relationships:**
 - Building (Many-to-One)
@@ -775,7 +772,6 @@ Responses automatically handle:
 ---
 
 ## 📞 Support & Questions
-
 For issues or questions about the API or project setup, please refer to the main [project README](../README.md) or open an issue on the repository.
 
 ---
