@@ -19,7 +19,7 @@ def list_classes():
         classes = Class.query.join(Class.room).filter(Room.id == room_id).all()
     else:
         classes = Class.query.all()
-    return jsonify(ClassSchema(many=True, only=("weekday", "start_time", "end_time", "recurrence")).dump(classes))
+    return jsonify(ClassSchema(many=True, only=("weekday", "start_time", "end_time", "recurrence", "room_id")).dump(classes))
 
 
 @bp.route("/<int:class_id>", methods=["GET"])

@@ -4,9 +4,9 @@ python -m venv venv
 call venv\Scripts\activate.bat
 pip install --upgrade pip
 pip install -r requirements.txt
-echo "Virtual environment activated."
-.\scripts\dbCreate.bat
-echo "Database created."
-python -m app.seeds.seed
-echo "Database seeded."
-echo "Setup complete."
+echo Virtual environment activated.
+call scripts\dbCreate.bat
+echo Database created.
+call scripts\dbSeed.bat
+echo Database seeded.
+echo Setup complete.
