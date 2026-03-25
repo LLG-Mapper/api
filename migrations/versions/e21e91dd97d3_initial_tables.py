@@ -1,8 +1,8 @@
 """Initial tables
 
-Revision ID: dea0587d197e
+Revision ID: e21e91dd97d3
 Revises: 
-Create Date: 2026-02-11 13:50:46.178318
+Create Date: 2026-03-25 12:51:02.111913
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'dea0587d197e'
+revision = 'e21e91dd97d3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -70,8 +70,7 @@ def upgrade():
     sa.Column('path', sa.String(length=255), nullable=False),
     sa.ForeignKeyConstraint(['building_id'], ['buildings.id'], ),
     sa.ForeignKeyConstraint(['type_id'], ['room_types.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('building_id', 'floor', 'number', name='uq_room_number_per_building')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('teachers',
     sa.Column('id', sa.Integer(), nullable=False),

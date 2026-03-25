@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify
 from marshmallow import ValidationError
 
+from ..models.room import Room
+from ..models.building import Building
 from ..models.class_ import Class
 from ..extensions import db
 from ..schemas import ClassSchema
@@ -12,8 +14,12 @@ classes_schema = ClassSchema(many=True)
 
 @bp.route("", methods=["GET"])
 def list_classes():
-    classes = Class.query.all()
-    return jsonify(classes_schema.dump(classes))
+    room_id = request.args.get("room", type=int)
+    if (room_id):
+        classes = Class.query.join(Class.room).filter(Room.id == room_id).all()
+    else:
+        classes = Class.query.all()
+    return jsonify(ClassSchema(many=True, only=("weekday", "start_time", "end_time", "recurrence")).dump(classes))
 
 
 @bp.route("/<int:class_id>", methods=["GET"])

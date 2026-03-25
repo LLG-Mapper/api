@@ -4,15 +4,6 @@ from ..extensions import db
 class Room(db.Model):
     __tablename__ = "rooms"
     
-    __table_args__ = (
-        db.UniqueConstraint(
-            "building_id",
-            "floor",
-            "number",
-            name="uq_room_number_per_building"
-        ),
-    )
-
     id = db.Column(db.Integer, primary_key=True)
     number = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(50))
@@ -32,7 +23,7 @@ class Room(db.Model):
     def display_name(self):
         if self.name:
             return self.name
-        return f"{self.building.code}{self.number:03d}"
+        return f"{self.building.code}{self.floor}{self.number:02d}"
 
     def is_available_at(self, dt):
         from app.services.availability_service import is_room_available
