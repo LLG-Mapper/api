@@ -1,4 +1,6 @@
 from datetime import datetime
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy import func
 from ..extensions import db
 
 class Room(db.Model):
@@ -24,6 +26,20 @@ class Room(db.Model):
         if self.name:
             return self.name
         return f"{self.building.code}{self.floor}{self.number:02d}"
+
+    @hybrid_property
+    def display_floor(self):
+        floor = self.floor if self.floor is not None else 0
+        building_floor = self.building.floor if self.building and self.building.floor is not None else 0
+        return floor + building_floor
+    
+    @display_floor.expression
+    def display_floor(cls):
+        from .building import Building
+        return cls.floor + func.coalesce(
+            db.select(Building.floor).where(Building.id == cls.building_id).correlate(cls).scalar_subquery(),
+            0
+        )
 
     def is_available_at(self, dt):
         from app.services.availability_service import is_room_available

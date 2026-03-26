@@ -21,6 +21,7 @@ def list_rooms():
     # Filters
     building_id = request.args.get("building_id", type=int)
     floor = request.args.get("floor", type=int)
+    display_floor = request.args.get("display_floor", type=int)
     feature_codes = request.args.getlist("feature_codes")
 
     availability_at = (
@@ -44,6 +45,9 @@ def list_rooms():
 
     if floor is not None:
         query = query.filter(Room.floor == floor)
+
+    if display_floor is not None:
+        query = query.filter(Room.display_floor == display_floor)
 
     if feature_codes:
         query = (

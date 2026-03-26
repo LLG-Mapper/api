@@ -23,6 +23,7 @@ class RoomSchema(Schema):
     path = fields.Str(required=True)
     features = fields.Nested(FeatureSchema, many=True, dump_only=True)
     display_name = fields.Str(dump_only=True)
+    display_floor = fields.Int(dump_only=True)
 
     class Meta:
         """Meta options."""
@@ -30,13 +31,6 @@ class RoomSchema(Schema):
 
     @post_dump
     def format_data(self, data, **kwargs):
-        """Format location/size as lists and set name from display_name if empty."""
-        # Format location
-        if "locationX" in data and "locationY" in data:
-            data["location"] = [data.pop("locationX"), data.pop("locationY")]
-        # Format size
-        if "sizeX" in data and "sizeY" in data:
-            data["size"] = [data.pop("sizeX"), data.pop("sizeY")]
         # Set name to display_name if name is empty
         if not data.get("name") and data.get("display_name"):
             data["name"] = data["display_name"]
