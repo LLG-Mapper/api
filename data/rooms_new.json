@@ -2,7 +2,7 @@
     {
         "name": "Cour d'Honneur",
         "code": "CH",
-        "floor": 0,
+        "floor": 1,
         "rooms": [
             {
                 "number": 15,
@@ -114,7 +114,7 @@
     {
         "name": "Victor Hugo",
         "code": "VH",
-        "floor": 0,
+        "floor": 1,
         "rooms": [
             {
                 "number": 16,
